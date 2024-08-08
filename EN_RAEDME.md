@@ -1,5 +1,5 @@
 <div align="center">
-<h1 style="font-size:10vw"><h1 style="font-size:10vw">灰喵</h1></h1>
+<h1 style="font-size:10vw"><h1 style="font-size:10vw">Black White Cat</h1></h1>
 <p align='center'>
 <img src='https://i.postimg.cc/QNPmws3g/00131-716747303-2.png' width='200' alt='logo' aling='middle'/>
 </p>
@@ -11,16 +11,16 @@
 </div>
 </p>
 
->基于分布式服务器概念而设立的一款聊天应用
+>A chat application Based on the concept of distributed servers
 
-建议使用 **Python3.10**
+recommend to use **Python3.10**
 
 
-## 1 简介
+## 1 introduction
 
-- 完全开源的一款聊天应用
-- 真正意义上安全自由的聊天工具
-- 所有服务器将由自己架设,没有意义上的官方服务器
+- open-source
+- absolutely secure
+- All servers will be set up by user, without any official servers
 
-## 2 概念
->在这款应用里，服务器将不知道你是谁,你可以决定你叫什么名字,也可以重名。你加入的每一个聊天都是不同的服务器，只要有密钥（群聊邀请连接）你就可以加入群聊。只要有需要，就可以自己搭建服务器以保证绝对安全
+## 2 idea
+>In this chat application, the server won't know who you are. You can decide what your name is, and you can have the same name as someone else. Every chat you join is on a different server, as long as your key (group chat invitation link), you can join the group chat. You can also set up your own server to ensure absolute security if needed.
