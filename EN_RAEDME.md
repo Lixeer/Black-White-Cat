@@ -11,9 +11,11 @@
 </div>
 </p>
 
->A chat application Based on the concept of distributed servers
 
-recommend to use **Python3.10**
+[简体中文](https://github.com/Lixeer/Black-White-Cat)
+
+
+>A chat application Based on the concept of distributed servers
 
 
 ## 1 introduction
