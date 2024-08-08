@@ -1,8 +1,12 @@
 # 灰喵
 
-![](https://i.postimg.cc/QNPmws3g/00131-716747303-2.png)
-
-
+<p align='center'>
+<img src='https://i.postimg.cc/QNPmws3g/00131-716747303-2.png)' width='200' alt='logo' aling='middle'/>
+</p>
+<img src="https://img.shields.io/github/stars/Lixeer/Black-White-Cat" alt="stars">
+<img alt="GitHub License" src="https://img.shields.io/github/license/Lixeer/Black-White-Cat">
+<img src="https://img.shields.io/badge/python-3.10-blue">
+</div>
 
 >基于分布式服务器概念而设立的一款聊天应用
 
