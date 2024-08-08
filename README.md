@@ -1,6 +1,10 @@
-<div align="center">
 
-# 灰喵
+<div align="center">
+<h1 style="font-size:10vw"><h1 style="font-size:10vw">灰喵</h1></h1>
+<p align='center'>
+<img src='https://i.postimg.cc/QNPmws3g/00131-716747303-2.png' width='200' alt='logo' aling='middle'/>
+</p>
+
 <br />
 <img src="https://img.shields.io/github/license/Lixeer/Black-White-Cat" alt="license">
 <img src="https://img.shields.io/github/stars/Lixeer/Black-White-Cat" alt="stars">
