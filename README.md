@@ -1,4 +1,3 @@
-水哥，咱群号是啥
 <div align="center">
 <h1 style="font-size:10vw"><h1 style="font-size:10vw">灰喵</h1></h1>
 <p align='center'>
