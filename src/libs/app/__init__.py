@@ -1,7 +1,7 @@
 import json
 import asyncio
 
-import src.libs.config as config
+import libs.config as config
 
 import websockets
 
