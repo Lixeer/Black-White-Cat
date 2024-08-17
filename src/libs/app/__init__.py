@@ -74,7 +74,7 @@ class App:
         except websockets.ConnectionClosed:
             aloger.error("connection closed")
         except KeyError:
-            aloger.error("wrong data data pack")
+            aloger.error("wrong data pack")
 
         finally:
             # 连接关闭时，从集合中移除用户

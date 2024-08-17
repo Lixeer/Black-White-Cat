@@ -1,9 +1,11 @@
 import inspect
 import datetime
+import enum
 
 import libs.config
 
-import enum
+from colorama import Fore
+
 class Level(enum.Enum):
     NONE=0
     INFO=1
@@ -17,17 +19,17 @@ class Loger:
     def info(self,content:str):
         if self.level>=Level.INFO.value:
             filename,line,time=self._get_call_stack()
-            print(f"{time}[{Level.INFO.name}] - {content} | {filename} line:{line} ")
+            print(f"{Fore.GREEN}{time}[{Level.INFO.name}] - {content} | {filename} line:{line} ")
 
     def warn(self,content:str):
         if self.level>=Level.WARN.value:
             filename,line,time=self._get_call_stack()
-            print(f"{time}[{Level.WARN.name}] - {content} | {filename} line:{line} ")
+            print(f"{Fore.YELLOW}{time}[{Level.WARN.name}] - {content} | {filename} line:{line} ")
 
     def error(self,content:str):
         if self.level>=Level.ERROR.value:
             filename,line,time=self._get_call_stack()
-            print(f"{time}[{Level.ERROR.name}] - {content} | {filename} line:{line} ")
+            print(f"{Fore.RED}{time}[{Level.ERROR.name}] - {content} | {filename} line:{line} ")
 
     def _get_call_stack(self):
         caller_frame = inspect.stack()[2]
