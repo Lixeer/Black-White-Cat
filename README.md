@@ -11,13 +11,16 @@
 </div>
 </p>
 
+#### 请注意这是一个服务端，而不是客户端
+[客户端在这里](https://github.com/gao-shuaibi/WBC_Android)
+
 [english](https://github.com/Lixeer/Black-White-Cat/blob/main/EN_RAEDME.md)
 
 
 
 >基于分布式服务器概念而设立的一款聊天应用
 
-建议使用 **Python3.10**
+建议使用 **Python3.10** 部署
 
 
 ## 1 简介
