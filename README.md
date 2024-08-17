@@ -12,11 +12,6 @@
 </p>
 
 
-#### 注意：
-###### 这是一款服务端软件，并非客户端
-[客户端请访问这里](https://github.com/gao-shuaibi/WBC_Android)
-
-[english](https://github.com/Lixeer/Black-White-Cat/blob/main/EN_RAEDME.md)
 
 
 
