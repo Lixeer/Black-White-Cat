@@ -2,6 +2,7 @@ import json
 import asyncio
 
 import libs.config as config
+from libs.loger import aloger
 
 import websockets
 
@@ -49,10 +50,11 @@ class App:
         return True,websocket,path
 
 
-    async def _handler(self,websocket,path):
-
+    async def _handler(self ,websocket,path):
+        aloger.info(f"{websocket.local_address} is building connect")
         result = await self._auth_bridge(websocket,path)
         if result == False:
+            aloger.info(f"{websocket.local_address} connect failure because of wrong auth-key")
             return
 
 
@@ -61,14 +63,18 @@ class App:
             return
 
         self.connected_users.add(websocket)
+        aloger.info(f"{websocket.local_address} success")
         try:
             async for message in websocket:
+                aloger.info(message)
                 data = json.loads(message)
 
                 if data["type"] == "message":
                     await self._broadcast(message, websocket)
         except websockets.ConnectionClosed:
-            pass
+            aloger.error("connection closed")
+        except KeyError:
+            aloger.error("wrong data data pack")
 
         finally:
             # 连接关闭时，从集合中移除用户
@@ -78,10 +84,10 @@ class App:
         # 向所有其他连接的用户发送消息
         for user in self.connected_users:
             if user != sender:
-                print(message)
+
                 await user.send(message)
 
     async def run(self):
-        print(f"websockets server is running ws://{self.address}:{self.port}")
+        aloger.info(f"websockets server is running ws://{self.address}:{self.port}")
         async with websockets.serve(self._handler, self.address, self.port):
             await asyncio.Future()
