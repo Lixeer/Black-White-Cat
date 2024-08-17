@@ -1,0 +1,3 @@
+VALID_KEY="caixukun66"
+PORT=2048
+ADDRESS="0.0.0.0"
