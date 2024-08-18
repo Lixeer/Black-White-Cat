@@ -80,7 +80,7 @@ class App:
                 if data["type"] == "message":
                     await self._broadcast(message, websocket)
         except websockets.ConnectionClosed:
-            aloger.error(Out.CONNECT_CLOSE)
+            aloger.error(Out.CONNECT_CLOSE.value)
         except KeyError:
             websocket.send(json.dumps(self.ILLEGAL))
             aloger.error(Out.ILLEGAL_DATA_PACK)
