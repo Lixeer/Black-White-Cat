@@ -83,7 +83,7 @@ class App:
             aloger.error(Out.CONNECT_CLOSE.value)
         except KeyError:
             websocket.send(json.dumps(self.ILLEGAL))
-            aloger.error(Out.ILLEGAL_DATA_PACK)
+            aloger.error(Out.ILLEGAL_DATA_PACK.value)
 
         finally:
             # 连接关闭时，从集合中移除用户
