@@ -3,6 +3,7 @@ import asyncio
 
 import libs.config as config
 from libs.loger import aloger
+from libs.app.const import Out
 
 import websockets
 
@@ -17,6 +18,13 @@ class App:
         "sender": "server",
         "type": "notice",
         "content": "right-key",
+        "time": "2024-8-5-17-17",
+    }
+
+    ILLEGAL={
+        "sender": "server",
+        "type": "notice",
+        "content": "illegal-data",
         "time": "2024-8-5-17-17",
     }
 
@@ -51,10 +59,10 @@ class App:
 
 
     async def _handler(self ,websocket,path):
-        aloger.info(f"{websocket.local_address} is building connect")
+        aloger.info(f"{websocket.local_address} {Out.BUILDING_CONNECT.value}")
         result = await self._auth_bridge(websocket,path)
         if result == False:
-            aloger.info(f"{websocket.local_address} connect failure because of wrong auth-key")
+            aloger.info(f"{websocket.local_address} {Out.FAILURE_FOR_WRONG_KEY.value}")
             return
 
 
@@ -63,7 +71,7 @@ class App:
             return
 
         self.connected_users.add(websocket)
-        aloger.info(f"{websocket.local_address} success")
+        aloger.info(f"{websocket.local_address} {Out.SUCCESS.value}")
         try:
             async for message in websocket:
                 aloger.info(message)
@@ -72,9 +80,10 @@ class App:
                 if data["type"] == "message":
                     await self._broadcast(message, websocket)
         except websockets.ConnectionClosed:
-            aloger.error("connection closed")
+            aloger.error(Out.CONNECT_CLOSE)
         except KeyError:
-            aloger.error("wrong data pack")
+            websocket.send(json.dumps(self.ILLEGAL))
+            aloger.error(Out.ILLEGAL_DATA_PACK)
 
         finally:
             # 连接关闭时，从集合中移除用户
@@ -88,6 +97,6 @@ class App:
                 await user.send(message)
 
     async def run(self):
-        aloger.info(f"websockets server is running ws://{self.address}:{self.port}")
+        aloger.info(f"{Out.SERVER_RUNNING.value} ws://{self.address}:{self.port}")
         async with websockets.serve(self._handler, self.address, self.port):
             await asyncio.Future()
