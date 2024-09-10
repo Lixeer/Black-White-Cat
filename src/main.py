@@ -1,7 +1,7 @@
 import asyncio
 
 from libs.app import App
-from libs.app import config
+from libs import config
 
 
 # 启动异步事件循环
