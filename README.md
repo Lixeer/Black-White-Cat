@@ -15,7 +15,7 @@
 
 
 
->灰喵--基于分布式服务器架构的聊天应用
+>灰喵--新式中心化数据通信应用
 
 
 [english](https://github.com/Lixeer/Black-White-Cat/blob/main/EN_RAEDME.md)
